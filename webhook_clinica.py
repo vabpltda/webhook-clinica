@@ -18,6 +18,7 @@ import json
 import requests
 import logging
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from anthropic import Anthropic
 
 # ─────────────────────────────────────────────
@@ -47,6 +48,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
+CORS(app)
 client = Anthropic(api_key=ANTHROPIC_API_KEY)
 
 
