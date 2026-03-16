@@ -152,15 +152,7 @@ def enviar_telegram(analise: dict, mensagem_original: str, remetente: str = "Pac
     )
 
     # Tenta obter o chat_id pelo username
-    chat_id = obter_chat_id(TELEGRAM_USERNAME)
-
-    if not chat_id:
-        logger.warning(
-            f"Não foi possível encontrar chat_id para @{TELEGRAM_USERNAME}. "
-            "Certifique-se de que o usuário enviou ao menos uma mensagem para o bot."
-        )
-        # Fallback: tenta enviar para o próprio username (funciona para canais/grupos públicos)
-        chat_id = f"@{TELEGRAM_USERNAME}"
+    chat_id = 1893518973
 
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     payload = {
